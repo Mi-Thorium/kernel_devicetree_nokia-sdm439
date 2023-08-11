@@ -1,0 +1,9 @@
+#include "pinctrl.dtsi"
+
+#include "android.dtsi"
+#include "audio.dtsi"
+#include "pm8953.dtsi"
+#include "pmi632.dtsi"
+#include "pmi632-thermal.dtsi"
+#include "regulator.dtsi"
+#include "soc.dtsi"

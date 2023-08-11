@@ -1,0 +1,2 @@
+#include "pmi632.dtsi"
+#include "pmi632-thermal.dtsi"

@@ -1,0 +1,61 @@
+&i2c_3 {
+	status = "ok";
+
+	focaltech@38 {                                                            
+		compatible = "focaltech,fts";
+		reg = <0x38>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <65 0x2800>;
+		vdd-supply = <&pm8953_l10>;
+		vcc_i2c-supply = <&pm8953_l6>;
+		focaltech,reset-gpio = <&tlmm 64 0x00>;
+		focaltech,irq-gpio = <&tlmm 65 0x2008>;
+		focaltech,max-touch-number = <5>;
+		focaltech,display-coords =  <0 0 720 1520>;
+		pinctrl-names = "pmx_ts_active","pmx_ts_suspend","pmx_ts_release";
+		pinctrl-0 = <&ts_int_active &ts_reset_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		pinctrl-2 = <&ts_release>;
+		focaltech,have-key;
+		focaltech,key-number = <3>;
+		focaltech,keys = <158 139 172>;
+		focaltech,key-y-coord = <2000>;
+		focaltech,key-x-coords = <200 600 800>;
+	};
+
+	himax_ts@48 {
+		compatible = "himax,hxcommon";
+		reg = <0x48>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <65 0x2800>;
+		avdd-supply = <&pm8953_l10>;
+		vdd-supply = <&pm8953_l6>;
+		himax,rst-gpio = <&tlmm 64 0x00>;
+		himax,irq-gpio = <&tlmm 65 0x2008>;
+		himax,panel-coords = <0 720 0 1520>;
+		himax,display-coords =  <0 720 0 1520>;
+		pinctrl-names = "pmx_ts_active","pmx_ts_suspend","pmx_ts_release";
+		pinctrl-0 = <&ts_int_active &ts_reset_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		pinctrl-2 = <&ts_release>;
+		report_type = <1>;
+	};
+
+	sitronix@55 {
+		compatible = "sitronix,st143xx";
+		reg = <0x55>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <65 0x2800>;
+		vdd_ana-supply = <&pm8953_l10>;
+		vcc_i2c-supply = <&pm8953_l6>;
+		sitronix,reset-gpios = <&tlmm 64 0x00>;
+		sitronix,interrupt-gpios = <&tlmm 65 0x2008>;
+		sitronix,panel-coords = <0 720 0 1520>;
+		sitronix,display-coords =  <0 720 0 1520>;
+		pinctrl-names = "pmx_ts_active","pmx_ts_suspend","pmx_ts_release";
+		pinctrl-0 = <&ts_int_active &ts_reset_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		pinctrl-2 = <&ts_release>;
+		report_type = <1>;
+	};
+};

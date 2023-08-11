@@ -1,0 +1,6 @@
+#include "audio.dtsi"
+#include "camera.dtsi"
+#include "display.dtsi"
+#include "nfc.dtsi"
+#include "sensor-sar.dtsi"
+#include "touchscreen.dtsi"

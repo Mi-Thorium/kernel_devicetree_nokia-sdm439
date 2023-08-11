@@ -1,0 +1,12 @@
+&spmi_bus {
+	qcom,pm8953@0 {
+		qcom,power-on@800 {
+			qcom,pon_1 {
+				qcom,support-reset = <1>;
+				qcom,s1-timer = <10256>; //S1 timer
+				qcom,s2-timer = <250>; //S2 timer //modify by pingao.yang, pr-410491
+				qcom,s2-type = <4>; //Type of reset //modify by pingao.yang, pr-410491
+			};
+		};
+	};
+};

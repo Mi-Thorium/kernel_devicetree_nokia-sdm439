@@ -1,0 +1,23 @@
+&soc {
+	/delete-node/ fpc1020;
+
+	fingerprint_gpio {
+		compatible = "qcom,fingerprint-gpio";
+		intrrupt-parent = <&tlmm>;
+		interrupts = <48 0>;
+		fp-gpio-reset = <&tlmm 124 0x00>;
+		fp-gpio-int   = <&tlmm 48 0x00>;
+		fp-gpio-power = <&tlmm 40 0x00>;
+		status = "okay";
+	};
+
+	sunwave_finger {
+		compatible = "fingerprint,sunwave-fp";
+		interrupt-parent = <&tlmm>;
+		interrupts = <48 0x0>;
+		sunwave,gpio_reset = <&tlmm 124 0x00>;
+		sunwave,gpio_irq   = <&tlmm 48 0x00>;
+		sunwave,gpio_pwr   = <&tlmm 40 0x00>;
+		status = "okay";
+	};
+};

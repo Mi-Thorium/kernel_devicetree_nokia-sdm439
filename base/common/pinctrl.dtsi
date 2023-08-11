@@ -1,0 +1,146 @@
+&tlmm {
+	tlmm_pmi_flash_led {
+		/delete-node/ front_flash_led_enable;
+		/delete-node/ front_flash_led_disable;
+	};
+
+	ts_int_default: ts_int_default {
+		mux {
+			pins = "gpio65";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio65";
+			drive-strength = <8>;
+			bias-pull-up;
+			input-enable;
+			//bias-disable;
+		};
+	};
+
+	ts_int_output_high: ts_int_output_high {
+		mux {
+			pins = "gpio65";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio65";
+			output-high;
+		};
+	};
+
+	ts_int_output_low: ts_int_output_low {
+		mux {
+			pins = "gpio65";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio65";
+			output-low;
+		};
+	};
+
+	ts_int_input: ts_int_input {
+		mux {
+			pins = "gpio65";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio65";
+			drive-strength = <8>;
+			bias-pull-up;
+			input-enable;
+			//bias-disable;
+		};
+	};
+
+	ts_rst_default: ts_rst_default {
+		mux {
+			pins = "gpio64";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio64";
+			drive-strength = <8>;
+			/*bias-pull-up;*/
+			input-enable;
+			bias-disable;
+		};
+	};
+
+	ts_rst_output_high: ts_rst_output_high {
+		mux {
+			pins = "gpio64";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio64";
+			output-high;
+		};
+	};
+
+	ts_rst_output_low: ts_rst_output_low {
+		mux {
+			pins = "gpio64";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio64";
+			output-low;
+		};
+	};
+
+	ts_rst_input: ts_rst_input {
+		mux {
+			pins = "gpio64";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio64";
+			input-enable;
+			bias-disable;
+		};
+	};
+};
+
+&gpio_key_active {
+	mux {
+		pins = "gpio90", "gpio91", "gpio127", "gpio128";
+	};
+
+	config {
+		pins = "gpio90", "gpio91", "gpio127", "gpio128";
+	};
+};
+
+&gpio_key_suspend {
+	mux {
+		pins = "gpio90", "gpio91", "gpio127", "gpio128";
+	};
+
+	config {
+		pins = "gpio90", "gpio91", "gpio127", "gpio128";
+	};
+};
+
+&wsa_vi_on {
+	mux {
+		function = "gpio";
+	};
+
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-up;
+	};
+};
+
+&wsa_vi_off {
+	mux {
+		function = "gpio";
+	};
+
+	config {
+		/delete-property/ bias-pull-down;
+		bias-pull-up;
+	};
+};

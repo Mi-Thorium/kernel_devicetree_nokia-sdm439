@@ -1,0 +1,3 @@
+&pm8953_l10 {
+	regulator-always-on;
+};

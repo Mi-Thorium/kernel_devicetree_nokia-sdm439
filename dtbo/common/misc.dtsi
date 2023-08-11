@@ -1,0 +1,15 @@
+&gpio_keys {
+	goog_key: goog_key {
+		label = "google_key";
+		gpios = <&tlmm 90 0x1>;
+		linux,input-type = <1>;
+		linux,code = <236>;
+		debounce-interval = <15>;
+		gpio-key,wakeup;
+		linux,can-disable;
+	};
+};
+
+&soc {
+	/delete-node/ hbtp;
+};

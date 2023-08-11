@@ -1,0 +1,92 @@
+/* From stock t89626-pmi632.dtsi */
+&thermal_zones {
+	pmi-ibat-lvl0 {
+		/delete-property/ wake-capable-sensor;
+	};
+	pmi-ibat-lvl1 {
+		/delete-property/ wake-capable-sensor;
+	};
+	pmi-vbat-lvl0 {
+		/delete-property/ wake-capable-sensor;
+	};
+	pmi-vbat-lvl1 {
+		/delete-property/ wake-capable-sensor;
+	};
+	pmi-vbat-lvl2 {
+		/delete-property/ wake-capable-sensor;
+	};
+	soc {
+		/delete-property/ wake-capable-sensor;
+	};
+	pmi632_tz {
+		/delete-property/ wake-capable-sensor;
+	};
+};
+
+&pmi632_low_soc {
+	temperature = <5>;
+};
+
+/* From stock t89626-sdm439-pmi632.dtsi */
+&thermal_zones {
+	soc {
+		cooling-maps {
+			/delete-node/ soc_map0;
+			/delete-node/ soc_map1;
+			/delete-node/ soc_map2;
+		};
+	};
+
+	quiet-therm-step {
+		/delete-property/ wake-capable-sensor;
+		trips {
+			/delete-node/ quiet-bt-trp6-mdm-trp3;
+			/delete-node/ quiet-batt-trip7;
+			quiet_modem_439_trip3: quiet-modem-trip2 {
+				temperature = <88000>;
+				hysteresis = <2000>;
+				type = "passive";
+			};
+		};
+		cooling-maps {
+			/delete-node/ battery_lvl6;
+			/delete-node/ battery_lvl7;
+			modem_lvl2 {
+				trip = <&quiet_modem_439_trip3>;
+			};
+		};
+	};
+
+	quiet-therm-adc {
+		/delete-property/ wake-capable-sensor;
+	};
+};
+
+&quiet_batt_439_trip1 {
+	temperature = <48000>;
+	hysteresis = <4000>;
+};
+&quiet_batt_439_trip2 {
+	temperature = <50000>;
+};
+&quiet_batt_439_trip3 {
+	temperature = <52000>;
+};
+&quiet_batt_439_trip4 {
+	temperature = <54000>;
+};
+&quiet_modem_439_trip1 {
+	temperature = <80000>;
+};
+&quiet_modem_439_trip2 {
+	temperature = <84000>;
+};
+&quiet_batt_439_trip5 {
+	temperature = <56000>;
+};
+&quiet_cpus_439_trip {
+	hysteresis = <2000>;
+};
+&quiet_modem_439_trip4 {
+	temperature = <92000>;
+};

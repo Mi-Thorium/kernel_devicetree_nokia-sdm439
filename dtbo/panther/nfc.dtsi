@@ -1,0 +1,20 @@
+&i2c_5 {
+	/delete-node/ nq@28;
+
+	st21nfc@8 {
+		compatible = "st,st21nfc";
+		status = "ok";
+		reg = <0x08>;
+		st,irq_gpio = <&tlmm 17 0x00>;
+		st,reset_gpio = <&tlmm 16 0x00>;
+		st,clkreq_gpio = <&pm8953_gpios 2 0x00>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <17 0>;
+		interrupt-names = "nfc_irq";
+		pinctrl-names = "nfc_active", "nfc_suspend";
+		pinctrl-0 = <&nfc_int_active &nfc_disable_active &nfc_clk_default>;
+		pinctrl-1 = <&nfc_int_suspend &nfc_disable_suspend>;
+		clocks = <&clock_gcc clk_bb_clk2_pin>;
+		clock-names = "nfc_ref_clk";
+	};
+};

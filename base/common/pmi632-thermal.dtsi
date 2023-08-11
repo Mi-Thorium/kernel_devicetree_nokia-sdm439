@@ -1,0 +1,4 @@
+/* From stock t89626-pmi632.dtsi */
+&pmi632_vadc {
+	/delete-node/ chan@4c;
+};

@@ -1,0 +1,15 @@
+&i2c_5 {
+	abov@20 {
+		status = "okay";
+		compatible = "abov,abov_sar";
+		reg = <0x20>;
+		reg_array_len = <0x03>;
+		reg_array_val = <0x07 0x00 0x08 0x07 0xFB 0x01>;
+		gpios = <&tlmm 45 0>;
+		vdd-supply = <&pm8953_l10>;
+		vcc_i2c-supply = <&pm8953_l6>;
+		cap,use_channel_bottom = <0x00>;
+		cap,use_channel_top = <0x01>;
+		label = "AbovCapSense";
+	};
+};

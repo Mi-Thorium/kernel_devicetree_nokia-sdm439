@@ -1,0 +1,5 @@
+&int_codec {
+	qcom,model = "sdm429-sku1-snd-card";
+	/delete-property/ qcom,msm-micbias2-ext-cap;
+	qcom,msm-hs-micbias-type = "internal";
+};

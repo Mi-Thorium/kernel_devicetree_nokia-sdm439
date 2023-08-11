@@ -1,0 +1,21 @@
+&mtp_batterydata {
+	#include "batterydata/batterydata-t89626-jiade-ca-4000mah.dtsi"
+	#include "batterydata/batterydata-t89626-drn-atl-4000mah.dtsi"
+	#include "batterydata/batterydata-t89626-jiade-vk-4000mah.dtsi"
+};
+
+&pmi632_charger {
+	qcom,usb-icl-ua = <2000000>;
+};
+
+&pmi632_lcdb {
+	/delete-node/ bst;
+};
+
+&pmi632_qg {
+	qcom,qg-iterm-ma = <180>;
+};
+
+&pmi632_vib {
+	qcom,vib-ldo-volt-uv = <2500000>;
+};

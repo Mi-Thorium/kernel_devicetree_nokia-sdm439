@@ -1,0 +1,34 @@
+&mtp_batterydata {
+	/delete-node/ qcom,ascent_3450mah;
+};
+
+&pmi632_charger {
+	/delete-property/ qcom,hw-connector-mitigation;
+	qcom,usb-icl-ua = <2000000>;
+};
+
+&pmi632_flash0 {
+	qcom,max-current = <1000>;
+};
+
+&pmi632_lcdb {
+	/delete-property/ qcom,voltage-step-ramp;
+};
+
+&pmi632_pwm {
+	qcom,lut-patterns = <13 38 64 89 115 140 166 191 217 242
+				242 242 217 191 166 140 115 89 64 38 13 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0>;
+	lpg@1 {
+		qcom,ramp-step-ms = <50>;
+		qcom,ramp-high-index = <39>;
+	};
+
+	lpg@2 {
+		qcom,ramp-step-ms = <50>;
+		qcom,ramp-high-index = <39>;
+	};
+
+	lpg@3 {
+		qcom,ramp-step-ms = <50>;
+	};
+};

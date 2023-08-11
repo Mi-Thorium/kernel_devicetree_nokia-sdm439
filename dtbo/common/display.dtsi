@@ -1,0 +1,9 @@
+/* From stock msm8937-mdss-panels.dtsi */
+#include "panel/dsi-panel-st7703-720p-ski-video.dtsi"
+#include "panel/dsi-panel-st7703-720p-ski-video-otp.dtsi"
+#include "panel/dsi-panel-st7703-720p-txd-video.dtsi"
+#include "panel/dsi-panel-hx8394f-720p-txd-video.dtsi"
+#include "panel/dsi-panel-jd9365z-720p-txd-video.dtsi"
+#include "panel/dsi-panel-ili9881c-720p-led-video.dtsi"
+#include "panel/dsi-panel-ili9881d-720p-led-video.dtsi"
+#include "panel/dsi-panel-jd9365z-720p-huashi-video.dtsi"

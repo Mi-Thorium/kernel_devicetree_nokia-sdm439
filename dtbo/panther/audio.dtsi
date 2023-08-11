@@ -1,0 +1,4 @@
+&int_codec {
+	/delete-property/ qcom,msm-micbias2-ext-cap;
+	qcom,msm-hs-micbias-type = "internal";
+};

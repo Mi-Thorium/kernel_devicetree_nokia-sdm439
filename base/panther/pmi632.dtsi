@@ -1,0 +1,30 @@
+&mtp_batterydata {
+	/delete-node/ qcom,mlp356477_2800mah;
+	#include "batterydata/batterydata-T89571-3000mah.dtsi"
+	#include "batterydata/batterydata-T89571-JD-3000mah.dtsi"
+};
+
+&lcdb_ldo_vreg {
+	qcom,ldo-voltage-mv = <5800>;
+	qcom,ldo-pd = <1>;
+	qcom,ldo-pd-strength = <1>;
+};
+
+&lcdb_ncp_vreg {
+	qcom,ncp-voltage-mv = <5800>;
+	qcom,ncp-pd = <1>;
+	qcom,ncp-pd-strength = <1>;
+};
+
+&pmi632_charger {
+	/* setting termination current of battery charging. */
+	qcom,chg-term-src = <1>;
+	qcom,chg-term-current-ma = <175>; // the supposed one working for this purpose.
+	qcom,chg-term-base-current-ma = <100>; // the lowest one for this purpose.
+
+	qcom,usb-icl-ua = <1000000>;
+};
+
+&pmi632_qg {
+	qcom,qg-iterm-ma = <250>;
+};
